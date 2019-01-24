@@ -1,40 +1,26 @@
 <template>
   <div id="app">
     <v-nav></v-nav>
-
-    <router-view></router-view>
-    <v-footer></v-footer>
+    <router-view/>
   </div>
 </template>
-
 <script>
-import nav from "./components/layout/nav.vue";
-import footer from "./components/layout/footer.vue";
-
-
+import daohang from "./components/daohang.vue";
 export default {
-  name: 'app',
-  data(){
-    return {
-      msg:"Ok"
-    }
-  },
-  methods:{
-    show:function(){
-      alert(this.msg);
-    }
-  },
+  name: 'App',
   components:{
-    // 视图模板名称:对应的是一个组件
-    "v-nav":nav,
-    "v-footer":footer,
-  },
-  mounted:function(){
-
+  // 视图模板名称:对应的是一个组件
+  "v-nav":daohang,
   }
 }
 </script>
-
-<style lang="scss">
-  @import "../static/css/index.scss";
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
 </style>

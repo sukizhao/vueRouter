@@ -1,0 +1,14 @@
+<template>
+      <div>
+          <h1>静夜思</h1>
+          <p>床前明月光</p>
+          <p>疑是地上霜。</p>
+          <p>举头望明月，</p>
+          <p>低头思故乡。</p>
+      </div> 
+</template>
+<script>
+      export default {
+            name: 'jingyesi',
+      }
+</script>
