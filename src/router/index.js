@@ -4,10 +4,11 @@ import daohang from '@/components/daohang'
 import jingyesi from '@/components/jingyesi'
 import minnong from '@/components/minnong'
 import eee from '@/components/eee'
+import mycalendar from '@/components/mycalendar'
+
 Vue.use(Router)
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: '/daohang',
       name: 'daohang',
       component: daohang
@@ -26,6 +27,11 @@ export default new Router({
       path: '/eee',
       name: 'eee',
       component: eee
+    },
+    {
+      path: '/mycalendar',
+      name: 'mycalendar',
+      component: mycalendar
     },
   ]
 })
