@@ -1,5 +1,5 @@
 <template>
-  <div id="myapp">
+  <div id="mycalender">
     <div class="flex">
       <div class="box">
         <calendar
@@ -42,6 +42,89 @@
           @select="calendar4.select"
         ></calendar>
       </div>
+      <div class="box">
+        <calendar
+          :range="calendar5.range"
+          :lunar="calendar5.lunar"
+          :value="calendar5.value"
+          :begin="calendar5.begin"
+          :end="calendar5.end"
+          @select="calendar5.select"
+        ></calendar>
+      </div>
+      <div class="box">
+        <calendar
+          :range="calendar6.range"
+          :lunar="calendar6.lunar"
+          :value="calendar6.value"
+          :begin="calendar6.begin"
+          :end="calendar6.end"
+          @select="calendar6.select"
+        ></calendar>
+      </div>
+    </div>
+    <div class="flex">
+      <div class="box">
+        <calendar
+          :range="calendar7.range"
+          :lunar="calendar7.lunar"
+          :value="calendar7.value"
+          :begin="calendar7.begin"
+          :end="calendar7.end"
+          @select="calendar7.select"
+        ></calendar>
+      </div>
+
+      <div class="box">
+        <calendar
+          :range="calendar8.range"
+          :lunar="calendar8.lunar"
+          :value="calendar8.value"
+          :begin="calendar8.begin"
+          :end="calendar8.end"
+          @select="calendar8.select"
+        ></calendar>
+      </div>
+      <div class="box">
+        <calendar
+          :range="calendar9.range"
+          :lunar="calendar9.lunar"
+          :value="calendar9.value"
+          :begin="calendar9.begin"
+          :end="calendar9.end"
+          @select="calendar9.select"
+        ></calendar>
+      </div>
+      <div class="box">
+        <calendar
+          :range="calendar10.range"
+          :lunar="calendar10.lunar"
+          :value="calendar10.value"
+          :begin="calendar10.begin"
+          :end="calendar10.end"
+          @select="calendar10.select"
+        ></calendar>
+      </div>
+      <div class="box">
+        <calendar
+          :range="calendar11.range"
+          :lunar="calendar11.lunar"
+          :value="calendar11.value"
+          :begin="calendar11.begin"
+          :end="calendar11.end"
+          @select="calendar11.select"
+        ></calendar>
+      </div>
+      <div class="box">
+        <calendar
+          :range="calendar12.range"
+          :lunar="calendar12.lunar"
+          :value="calendar12.value"
+          :begin="calendar12.begin"
+          :end="calendar12.end"
+          @select="calendar12.select"
+        ></calendar>
+      </div>
     </div>
   </div>
 </template>
@@ -50,7 +133,7 @@
 import calendar from "./calendar.vue";
 
 export default {
-  name: "myapp",
+  name: "mycalendar",
   components: {
     calendar
   },
@@ -95,6 +178,86 @@ export default {
         select(begin, end) {
           // console.log(begin.toString(),end.toString());
         }
+      },
+      calendar5: {
+        range: true,
+        value: [[2019, 5, 1], [2030, 1, 1]], //默认日期
+        lunar: true, //显示农历
+        begin: [1900, 1, 1], //可选开始日期
+        end: [2030, 1, 1], //可选结束日期
+        select(begin, end) {
+          // console.log(begin.toString(),end.toString());
+        }
+      },
+      calendar6: {
+        range: true,
+        value: [[2019, 6, 1], [2030, 1, 1]], //默认日期
+        lunar: true, //显示农历
+        begin: [1900, 1, 1], //可选开始日期
+        end: [2030, 1, 1], //可选结束日期
+        select(begin, end) {
+          // console.log(begin.toString(),end.toString());
+        }
+      },
+      calendar7: {
+        range: true,
+        value: [[2019, 7, 1], [2030, 1, 1]], //默认日期
+        lunar: true, //显示农历
+        begin: [1900, 1, 1], //可选开始日期
+        end: [2030, 1, 1], //可选结束日期
+        select(begin, end) {
+          // console.log(begin.toString(),end.toString());
+        }
+      },
+      calendar8: {
+        range: true,
+        value: [[2019, 8, 1], [2030, 1, 1]], //默认日期
+        lunar: true, //显示农历
+        begin: [1900, 1, 1], //可选开始日期
+        end: [2030, 1, 1], //可选结束日期
+        select(begin, end) {
+          // console.log(begin.toString(),end.toString());
+        }
+      },
+      calendar9: {
+        range: true,
+        value: [[2019, 9, 1], [2030, 1, 1]], //默认日期
+        lunar: true, //显示农历
+        begin: [1900, 1, 1], //可选开始日期
+        end: [2030, 1, 1], //可选结束日期
+        select(begin, end) {
+          // console.log(begin.toString(),end.toString());
+        }
+      },
+      calendar10: {
+        range: true,
+        value: [[2019, 10, 1], [2030, 1, 1]], //默认日期
+        lunar: true, //显示农历
+        begin: [1900, 1, 1], //可选开始日期
+        end: [2030, 1, 1], //可选结束日期
+        select(begin, end) {
+          // console.log(begin.toString(),end.toString());
+        }
+      },
+      calendar11: {
+        range: true,
+        value: [[2019, 11, 1], [2030, 1, 1]], //默认日期
+        lunar: true, //显示农历
+        begin: [1900, 1, 1], //可选开始日期
+        end: [2030, 1, 1], //可选结束日期
+        select(begin, end) {
+          // console.log(begin.toString(),end.toString());
+        }
+      },
+      calendar12: {
+        range: true,
+        value: [[2019, 12, 1], [2030, 1, 1]], //默认日期
+        lunar: true, //显示农历
+        begin: [1900, 1, 1], //可选开始日期
+        end: [2030, 1, 1], //可选结束日期
+        select(begin, end) {
+          // console.log(begin.toString(),end.toString());
+        }
       }
     };
   },
@@ -108,7 +271,8 @@ export default {
 }
 .box {
   width: 300px;
-  margin: 20px;
+  border: 1px solid #aaa;
+  margin: 30px 10px;
 }
 </style>
 

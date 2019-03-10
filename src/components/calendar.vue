@@ -26,18 +26,22 @@
 }
 .calendar-info {
   padding-top: 3px;
-  font-size: 16px;
+  /* font-size: 16px; */
+  font-size: 14px;
   line-height: 1.3;
   text-align: center;
 }
 .calendar-info > div.month {
   margin: auto;
   height: 20px;
-  width: 100px;
+  /* width: 100px; */
   text-align: center;
   color: #5e7a88;
   overflow: hidden;
   position: relative;
+  /* 重新定位 */
+  top: -18px;
+  left: 140px;
 }
 .calendar-info > div.month .month-inner {
   position: absolute;
@@ -91,12 +95,14 @@
   cursor: default !important;
 }
 .calendar td.disabled {
-  color: #ccc;
+  /* color: #ccc; */
+  color: #fff;
   pointer-events: none !important;
   cursor: default !important;
 }
 .calendar td.disabled div {
-  color: #ccc;
+  /* color: #ccc; */
+  color: #fff;
 }
 .calendar td span {
   display: block;
@@ -108,11 +114,11 @@
   border-radius: 20px;
 }
 .calendar td:not(.selected) span:not(.red):hover {
-  background: #f3f8fa;
+  /* background: #f3f8fa; */
   color: #444;
 }
 .calendar td:not(.selected) span.red:hover {
-  background: #f9efef;
+  /* background: #f9efef; */
 }
 
 .calendar td:not(.disabled) span.red {
@@ -139,12 +145,12 @@
   color: #ea6151;
 }
 .calendar td.selected span.red {
-  background-color: #ea6151;
-  color: #fff;
+  /* background-color: #ea6151;
+  color: #fff; */
 }
 .calendar td.selected span.red:hover {
-  background-color: #ea6151;
-  color: #fff;
+  /* background-color: #ea6151;
+  color: #fff; */
 }
 .calendar thead td {
   text-transform: uppercase;
@@ -215,7 +221,7 @@
 <template>
   <div class="calendar">
     <div class="calendar-tools">
-      <span class="calendar-prev" @click="prev">
+      <!-- <span class="calendar-prev" @click="prev">
         <svg
           width="20"
           height="20"
@@ -233,8 +239,8 @@
             </g>
           </g>
         </svg>
-      </span>
-      <span class="calendar-next" @click="next">
+      </span>-->
+      <!-- <span class="calendar-next" @click="next">
         <svg
           width="20"
           height="20"
@@ -252,14 +258,14 @@
             </g>
           </g>
         </svg>
-      </span>
-      <div class="calendar-info" @click.stop="changeYear">
+      </span>-->
+      <div class="calendar-info">
+        <span class="year">{{year}}年</span>
         <div class="month">
           <div class="month-inner" :style="{'top':-(this.month*20)+'px'}">
             <span v-for="m in months">{{m}}</span>
           </div>
         </div>
-        <div class="year">{{year}}</div>
       </div>
     </div>
     <table cellpadding="5">
@@ -363,19 +369,33 @@ export default {
       type: Array,
       default: function() {
         return window.navigator.language.toLowerCase() == "zh-cn"
-          ? [
-              "一月",
-              "二月",
-              "三月",
-              "四月",
-              "五月",
-              "六月",
-              "七月",
-              "八月",
-              "九月",
-              "十月",
-              "十一月",
-              "十二月"
+          ? // ? [
+            //     "一月",
+            //     "二月",
+            //     "三月",
+            //     "四月",
+            //     "五月",
+            //     "六月",
+            //     "七月",
+            //     "八月",
+            //     "九月",
+            //     "十月",
+            //     "十一月",
+            //     "十二月"
+            //   ]
+            [
+              "1月",
+              "2月",
+              "3月",
+              "4月",
+              "5月",
+              "6月",
+              "7月",
+              "8月",
+              "9月",
+              "10月",
+              "11月",
+              "12月"
             ]
           : [
               "January",
