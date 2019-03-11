@@ -1,7 +1,7 @@
 <template>
   <div id="mycalender">
     <div class="flex">
-      <div class="box" v-for="item in valueArray" :key="item">
+      <div class="box" v-for="item in valueArray">
         <calendar
           :range="true"
           :lunar="false"
