@@ -142,7 +142,7 @@ export default {
       calendar1: {
         range: true,
         value: [[2019, 1, 1], [2030, 1, 1]], //默认日期
-        lunar: true, //显示农历
+        lunar: false, //显示农历
         begin: [1900, 1, 1], //可选开始日期
         end: [2030, 1, 1], //可选结束日期
         select(begin, end) {
@@ -152,7 +152,7 @@ export default {
       calendar2: {
         range: true,
         value: [[2019, 2, 1], [2030, 1, 1]], //默认日期
-        lunar: true, //显示农历
+        lunar: false, //显示农历
         begin: [1900, 1, 1], //可选开始日期
         end: [2030, 1, 1], //可选结束日期
         select(begin, end) {
@@ -162,7 +162,7 @@ export default {
       calendar3: {
         range: true,
         value: [[2019, 3, 1], [2030, 1, 1]], //默认日期
-        lunar: true, //显示农历
+        lunar: false, //显示农历
         begin: [1900, 1, 1], //可选开始日期
         end: [2030, 1, 1], //可选结束日期
         select(begin, end) {
@@ -172,7 +172,7 @@ export default {
       calendar4: {
         range: true,
         value: [[2019, 4, 1], [2030, 1, 1]], //默认日期
-        lunar: true, //显示农历
+        lunar: false, //显示农历
         begin: [1900, 1, 1], //可选开始日期
         end: [2030, 1, 1], //可选结束日期
         select(begin, end) {
@@ -182,7 +182,7 @@ export default {
       calendar5: {
         range: true,
         value: [[2019, 5, 1], [2030, 1, 1]], //默认日期
-        lunar: true, //显示农历
+        lunar: false, //显示农历
         begin: [1900, 1, 1], //可选开始日期
         end: [2030, 1, 1], //可选结束日期
         select(begin, end) {
@@ -192,7 +192,7 @@ export default {
       calendar6: {
         range: true,
         value: [[2019, 6, 1], [2030, 1, 1]], //默认日期
-        lunar: true, //显示农历
+        lunar: false, //显示农历
         begin: [1900, 1, 1], //可选开始日期
         end: [2030, 1, 1], //可选结束日期
         select(begin, end) {
@@ -202,7 +202,7 @@ export default {
       calendar7: {
         range: true,
         value: [[2019, 7, 1], [2030, 1, 1]], //默认日期
-        lunar: true, //显示农历
+        lunar: false, //显示农历
         begin: [1900, 1, 1], //可选开始日期
         end: [2030, 1, 1], //可选结束日期
         select(begin, end) {
@@ -212,7 +212,7 @@ export default {
       calendar8: {
         range: true,
         value: [[2019, 8, 1], [2030, 1, 1]], //默认日期
-        lunar: true, //显示农历
+        lunar: false, //显示农历
         begin: [1900, 1, 1], //可选开始日期
         end: [2030, 1, 1], //可选结束日期
         select(begin, end) {
@@ -222,7 +222,7 @@ export default {
       calendar9: {
         range: true,
         value: [[2019, 9, 1], [2030, 1, 1]], //默认日期
-        lunar: true, //显示农历
+        lunar: false, //显示农历
         begin: [1900, 1, 1], //可选开始日期
         end: [2030, 1, 1], //可选结束日期
         select(begin, end) {
@@ -232,7 +232,7 @@ export default {
       calendar10: {
         range: true,
         value: [[2019, 10, 1], [2030, 1, 1]], //默认日期
-        lunar: true, //显示农历
+        lunar: false, //显示农历
         begin: [1900, 1, 1], //可选开始日期
         end: [2030, 1, 1], //可选结束日期
         select(begin, end) {
@@ -242,7 +242,7 @@ export default {
       calendar11: {
         range: true,
         value: [[2019, 11, 1], [2030, 1, 1]], //默认日期
-        lunar: true, //显示农历
+        lunar: false, //显示农历
         begin: [1900, 1, 1], //可选开始日期
         end: [2030, 1, 1], //可选结束日期
         select(begin, end) {
@@ -252,7 +252,7 @@ export default {
       calendar12: {
         range: true,
         value: [[2019, 12, 1], [2030, 1, 1]], //默认日期
-        lunar: true, //显示农历
+        lunar: false, //显示农历
         begin: [1900, 1, 1], //可选开始日期
         end: [2030, 1, 1], //可选结束日期
         select(begin, end) {

@@ -278,18 +278,18 @@
         <tr v-for="(day,k1) in days" style="{'animation-delay',(k1*30)+'ms'}">
           <td
             v-for="(child,k2) in day"
-            :class="{'selected':!child.selected,'disabled':child.disabled}"
+            :class="{'selected':child.selected,'disabled':child.disabled}"
             @click="select(k1,k2,$event)"
           >
             <span
               :class="{'red':k2==0||k2==6||((child.isLunarFestival||child.isGregorianFestival) && lunar)}"
             >{{child.day}}</span>
             <div class="text" v-if="child.eventName!=undefined">{{child.eventName}}</div>
-            <div
+            <!-- <div
               class="text"
               :class="{'isLunarFestival':child.isLunarFestival,'isGregorianFestival':child.isGregorianFestival}"
               v-if="lunar"
-            >{{child.lunar}}</div>
+            >{{child.lunar}}</div> 注释掉显示的农历-->
           </td>
         </tr>
       </tbody>
@@ -550,7 +550,7 @@ export default {
             );
             let stepTime = Number(new Date(this.year, this.month, i));
             if (beginTime <= stepTime && endTime >= stepTime) {
-              options.selected = true;
+              options.selected = false; //这里控制默认日历是否选中
             }
           }
           if (this.begin.length > 0) {
@@ -854,6 +854,16 @@ export default {
 
     // 选中日期
     select(k1, k2, e) {
+      //console.log(this.year);//获取点击的年份
+      // console.log(this.month);
+      //console.log(this.days[k1][k2].day); //获取点击的日期
+      const selectYear = this.year;
+      const selectMonth = this.month + 1;
+      const selectDay = this.days[k1][k2].day;
+      console.log(selectYear);
+      console.log(selectMonth);
+      console.log(selectDay);
+
       // 设置当前选中天
       if (this.days[k1][k2].selected == true) {
         this.days[k1][k2].selected = false;
