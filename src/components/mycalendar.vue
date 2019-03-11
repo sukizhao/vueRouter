@@ -1,15 +1,13 @@
 <template>
   <div id="mycalender">
-    <div class="flex">
-      <div class="box" v-for="item in valueArray">
-        <calendar
-          :range="true"
-          :lunar="false"
-          :value="[item, [2030, 1, 1]]"
-          :begin="[1900, 1, 1]"
-          :end="[2030, 1, 1]"
-        ></calendar>
-      </div>
+    <div class="box" v-for="item in valueArray">
+      <calendar
+        :range="true"
+        :lunar="false"
+        :value="[item, [2030, 1, 1]]"
+        :begin="[1900, 1, 1]"
+        :end="[2030, 1, 1]"
+      ></calendar>
     </div>
   </div>
 </template>
@@ -49,9 +47,6 @@ export default {
 </script>
 
 <style>
-.flex {
-  /* display: flex; */
-}
 .box {
   width: 300px;
   border: 1px solid #aaa;
