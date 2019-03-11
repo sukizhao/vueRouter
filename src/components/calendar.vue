@@ -369,21 +369,7 @@ export default {
       type: Array,
       default: function() {
         return window.navigator.language.toLowerCase() == "zh-cn"
-          ? // ? [
-            //     "一月",
-            //     "二月",
-            //     "三月",
-            //     "四月",
-            //     "五月",
-            //     "六月",
-            //     "七月",
-            //     "八月",
-            //     "九月",
-            //     "十月",
-            //     "十一月",
-            //     "十二月"
-            //   ]
-            [
+          ? [
               "1月",
               "2月",
               "3月",
@@ -924,35 +910,7 @@ export default {
         } else {
           this.rangeEnd = [this.year, this.month, this.days[k1][k2].day];
           this.rangeEndTemp = 1;
-          // 判断结束日期小于开始日期则自动颠倒过来
-          if (
-            +new Date(this.rangeEnd[0], this.rangeEnd[1], this.rangeEnd[2]) <
-            +new Date(
-              this.rangeBegin[0],
-              this.rangeBegin[1],
-              this.rangeBegin[2]
-            )
-          ) {
-            this.rangeBegin = this.rangeEnd;
-            this.rangeEnd = this.rangeBeginTemp;
-          }
-          // 小于10左边打补丁
-          let begin = [];
-          let end = [];
-          if (this.zero) {
-            this.rangeBegin.forEach((v, k) => {
-              if (k == 1) v = v + 1;
-              begin.push(this.zeroPad(v));
-            });
-            this.rangeEnd.forEach((v, k) => {
-              if (k == 1) v = v + 1;
-              end.push(this.zeroPad(v));
-            });
-          } else {
-            begin = this.rangeBegin;
-            end = this.rangeEnd;
-          }
-          // console.log("选中日期",begin,end)
+
           this.$emit("select", begin, end);
         }
         this.render(this.year, this.month);
