@@ -278,7 +278,7 @@
         <tr v-for="(day,k1) in days" style="{'animation-delay',(k1*30)+'ms'}">
           <td
             v-for="(child,k2) in day"
-            :class="{'selected':child.selected,'disabled':child.disabled}"
+            :class="{'selected':!child.selected,'disabled':child.disabled}"
             @click="select(k1,k2,$event)"
           >
             <span
@@ -294,10 +294,6 @@
         </tr>
       </tbody>
     </table>
-
-    <div class="calendar-years" :class="{'show':yearsShow}">
-      <span v-for="y in years" @click.stop="selectYear(y)" :class="{'active':y==year}">{{y}}</span>
-    </div>
   </div>
 </template>
 
@@ -483,12 +479,6 @@ export default {
 
           this.rangeBegin = [this.year, this.month, this.day];
           this.rangeEnd = [year2, month2, day2];
-        } else if (this.multi) {
-          //多选
-          this.multiDays = this.value;
-          this.year = parseInt(this.value[0][0]);
-          this.month = parseInt(this.value[0][1]) - 1;
-          this.day = parseInt(this.value[0][2]);
         } else {
           //单选
           this.year = parseInt(this.value[0]);
@@ -702,17 +692,7 @@ export default {
               this.getLunarInfo(this.year, this.month + 1, i),
               this.getEvents(this.year, this.month + 1, i)
             );
-            if (this.begin.length > 0) {
-              let beginTime = Number(
-                new Date(
-                  parseInt(this.begin[0]),
-                  parseInt(this.begin[1]) - 1,
-                  parseInt(this.begin[2])
-                )
-              );
-              if (beginTime > Number(new Date(this.year, this.month, i)))
-                options.disabled = true;
-            }
+
             if (this.end.length > 0) {
               let endTime = Number(
                 new Date(
@@ -871,130 +851,15 @@ export default {
       }
       return data;
     },
-    // 上月
-    prev(e) {
-      e.stopPropagation();
-      if (this.month == 0) {
-        this.month = 11;
-        this.year = parseInt(this.year) - 1;
-      } else {
-        this.month = parseInt(this.month) - 1;
-      }
-      this.render(this.year, this.month);
-      this.$emit("selectMonth", this.month + 1, this.year);
-      this.$emit("prev", this.month + 1, this.year);
-    },
-    //  下月
-    next(e) {
-      e.stopPropagation();
-      if (this.month == 11) {
-        this.month = 0;
-        this.year = parseInt(this.year) + 1;
-      } else {
-        this.month = parseInt(this.month) + 1;
-      }
-      this.render(this.year, this.month);
-      this.$emit("selectMonth", this.month + 1, this.year);
-      this.$emit("next", this.month + 1, this.year);
-    },
+
     // 选中日期
     select(k1, k2, e) {
-      if (e != undefined) e.stopPropagation();
-      // 日期范围
-      if (this.range) {
-        if (this.rangeBegin.length == 0 || this.rangeEndTemp != 0) {
-          this.rangeBegin = [this.year, this.month, this.days[k1][k2].day];
-          this.rangeBeginTemp = this.rangeBegin;
-          this.rangeEnd = [this.year, this.month, this.days[k1][k2].day];
-          this.rangeEndTemp = 0;
-        } else {
-          this.rangeEnd = [this.year, this.month, this.days[k1][k2].day];
-          this.rangeEndTemp = 1;
-
-          this.$emit("select", begin, end);
-        }
-        this.render(this.year, this.month);
-      } else if (this.multi) {
-        // 如果已经选过则过滤掉
-        let filterDay = this.multiDays.filter(v => {
-          return (
-            this.year === v[0] &&
-            this.month === v[1] - 1 &&
-            this.days[k1][k2].day === v[2]
-          );
-        });
-        if (filterDay.length > 0) {
-          this.multiDays = this.multiDays.filter(v => {
-            return (
-              this.year !== v[0] ||
-              this.month !== v[1] - 1 ||
-              this.days[k1][k2].day !== v[2]
-            );
-          });
-        } else {
-          this.multiDays.push([
-            this.year,
-            this.month + 1,
-            this.days[k1][k2].day
-          ]);
-        }
-        this.days[k1][k2].selected = !this.days[k1][k2].selected;
-        this.$emit("select", this.multiDays);
+      // 设置当前选中天
+      if (this.days[k1][k2].selected == true) {
+        this.days[k1][k2].selected = false;
       } else {
-        // 取消上次选中
-        if (this.today.length > 0) {
-          this.days.forEach(v => {
-            v.forEach(vv => {
-              vv.selected = false;
-            });
-          });
-        }
-        // 设置当前选中天
         this.days[k1][k2].selected = true;
-        this.day = this.days[k1][k2].day;
-        this.today = [k1, k2];
-        this.$emit("select", [
-          this.year,
-          this.zero ? this.zeroPad(this.month + 1) : this.month + 1,
-          this.zero
-            ? this.zeroPad(this.days[k1][k2].day)
-            : this.days[k1][k2].day
-        ]);
       }
-    },
-    changeYear() {
-      if (this.yearsShow) {
-        this.yearsShow = false;
-        return false;
-      }
-      this.yearsShow = true;
-      this.years = [];
-      for (let i = ~~this.year - 10; i < ~~this.year + 10; i++) {
-        this.years.push(i);
-      }
-    },
-    selectYear(value) {
-      this.yearsShow = false;
-      this.year = value;
-      this.render(this.year, this.month);
-      this.$emit("selectYear", value);
-    },
-    // 返回今天
-    setToday() {
-      let now = new Date();
-      this.year = now.getFullYear();
-      this.month = now.getMonth();
-      this.day = now.getDate();
-      this.render(this.year, this.month);
-      // 遍历当前日找到选中
-      this.days.forEach(v => {
-        let day = v.find(vv => {
-          return vv.day == this.day && !vv.disabled;
-        });
-        if (day != undefined) {
-          day.selected = true;
-        }
-      });
     },
     // 日期补零
     zeroPad(n) {
