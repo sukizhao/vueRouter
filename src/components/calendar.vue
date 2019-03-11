@@ -125,8 +125,8 @@
   color: #ea6151;
 }
 .calendar td.selected span {
-  background-color: #5e7a88;
-  color: #fff;
+  background-color: #09c;
+  color: #fff !important;
 }
 .calendar td .text {
   position: absolute;
@@ -406,6 +406,7 @@ export default {
   data() {
     return {
       years: [],
+      everyday: [],
       yearsShow: false,
       year: 0,
       month: 0,
@@ -459,6 +460,8 @@ export default {
   },
   mounted() {
     this.init();
+
+    // this.days[0][3].selected = true;
   },
   methods: {
     init() {
@@ -550,6 +553,7 @@ export default {
             );
             let stepTime = Number(new Date(this.year, this.month, i));
             if (beginTime <= stepTime && endTime >= stepTime) {
+              // console.log(options);
               options.selected = false; //这里控制默认日历是否选中
             }
           }
@@ -860,9 +864,11 @@ export default {
       const selectYear = this.year;
       const selectMonth = this.month + 1;
       const selectDay = this.days[k1][k2].day;
-      console.log(selectYear);
-      console.log(selectMonth);
-      console.log(selectDay);
+      // console.log(selectYear);
+      // console.log(selectMonth);
+      // console.log(selectDay);
+      // this.everyday = this;
+      // console.log(this.everyday);
 
       // 设置当前选中天
       if (this.days[k1][k2].selected == true) {
@@ -870,10 +876,6 @@ export default {
       } else {
         this.days[k1][k2].selected = true;
       }
-    },
-    // 日期补零
-    zeroPad(n) {
-      return String(n < 10 ? "0" + n : n);
     }
   }
 };
