@@ -451,7 +451,7 @@ export default {
     };
   },
   watch: {
-    events() {
+    events(e) {
       this.render(this.year, this.month);
     },
     value() {
@@ -460,8 +460,7 @@ export default {
   },
   mounted() {
     this.init();
-
-    // this.days[0][3].selected = true;
+    console.log(this.days.length);
   },
   methods: {
     init() {
