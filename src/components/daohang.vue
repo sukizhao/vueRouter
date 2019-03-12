@@ -2,13 +2,16 @@
   <div class="navagation">
     <router-link to="/mycalendar">日历</router-link>
     <router-link to="/jingyesi">静夜思</router-link>
-    <router-link to="/minnong">悯农</router-link>
+    <router-link to="/zhaoshuqi">悯农</router-link>
     <router-link to="/eee">鹅鹅鹅</router-link>
   </div>
 </template>
 <script>
 export default {
-  name: "daohang"
+  name: "daohang",
+  data() {
+    return {};
+  }
 };
 </script>
 
