@@ -9,6 +9,10 @@ import mycalendar from '@/components/calendar/mycalendar.vue'
 Vue.use(Router)
 export default new Router({
   routes: [{
+      path: '/',
+      redirect: 'zhaoshuqi'
+    }, //配置默认路由
+    {
       path: '/daohang',
       name: 'daohang',
       component: daohang
