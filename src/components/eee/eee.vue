@@ -1,43 +1,24 @@
 <template>
   <div>
-    <!--editor的div为富文本的承载容器-->
-    <div id="editor"></div>
     <button type @click="gettext">点击</button>
   </div>
 </template>
-<style>
-#editor {
-  width: 800px;
-  height: 500px;
-}
-</style>
-
 <script>
 export default {
   data() {
     return {
-      editor: null
+      list: [1, 2, 3, 4, 5]
     };
   },
-
-  mounted() {
-    // 实例化editor编辑器
-
-    this.editor = UE.getEditor("editor"); // console.log(this.editor.setContent("1223"))
-  },
-
   methods: {
     gettext() {
-      // 获取editor中的文本
-
-      console.log(this.editor.getContent());
+      this.nodeList = this.list;
+      console.log(this.list);
+      this.nodeList.splice(1, 1);
     }
   },
-
-  destroyed() {
-    // 将editor进行销毁
-
-    this.editor.destroy();
-  }
+  mounted() {}
 };
 </script>
+<style>
+</style>

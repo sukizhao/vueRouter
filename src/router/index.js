@@ -5,6 +5,8 @@ import jingyesi from '@/components/jingyesi/jingyesi.vue'
 import minnong from '@/components/minnong/minnong.vue' //这里必须加vue后缀名是因为有重名的js文件
 import eee from '@/components/eee/eee.vue'
 import mycalendar from '@/components/calendar/mycalendar.vue'
+import tree from '@/components/tree/tree.vue'
+
 
 Vue.use(Router)
 export default new Router({
@@ -36,6 +38,10 @@ export default new Router({
       path: '/mycalendar',
       name: 'mycalendar',
       component: mycalendar
+    }, {
+      path: '/tree',
+      name: 'tree',
+      component: tree
     },
   ]
 })

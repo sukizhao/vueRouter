@@ -7,6 +7,8 @@ import '../static/Ueditor/lang/zh-cn/zh-cn.js'
 import '../static/Ueditor/ueditor.parse.min.js'
 Vue.config.productionTip = false
 
+Vue.prototype.bus = new Vue();
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

@@ -2,7 +2,7 @@
   <div>
     <h1>我是子组件</h1>
     <p>{{zsq}}-这里可以直接接收父组件的值</p>
-    <button @click="showTitle">点击</button>
+    <button @click="showTitle">点击进行bus传值</button>
   </div>
 </template>
 <script>
@@ -16,8 +16,9 @@ export default {
   },
   methods: {
     showTitle: function() {
-      console.log(this.zsq);
       // 点击接收父组件值或者在上面直接接收也行
+      console.log(this.zsq);
+      this.bus.$emit("openMenu", true); //相当于这个车在emit分发信号，父组件就可以去接收openMenu了
     }
   }
 };
