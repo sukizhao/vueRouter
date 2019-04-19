@@ -4,6 +4,7 @@
   </div>
 </template>
 <script>
+import { password } from "@/libs/password";
 export default {
   data() {
     return {
@@ -17,7 +18,9 @@ export default {
       this.nodeList.splice(1, 1);
     }
   },
-  mounted() {}
+  mounted() {
+    console.log(password("sukizhao"));
+  }
 };
 </script>
 <style>
