@@ -47,8 +47,8 @@ export default {
     });
   },
   // 最好在组件销毁前清除事件监听
-  beforeDestroy() {
-    this.$bus.$off("openMenu");
-  }
+  // beforeDestroy() {
+  //   this.$bus.$off("openMenu");
+  // }
 };
 </script>

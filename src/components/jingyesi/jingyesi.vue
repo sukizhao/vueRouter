@@ -20,6 +20,11 @@ export default {
       this.toCity = data.cityname; //改变了父组件的值
       console.log("toCity:" + this.toCity);
     }
+  },
+  mounted() {
+    this.bus.$on("openMenu", msg => {
+      console.log(msg);
+    });
   }
 };
 </script>
