@@ -5,6 +5,7 @@
     <router-link to="/zhaoshuqi">悯农</router-link>
     <router-link to="/eee">鹅鹅鹅</router-link>
     <router-link to="/tree">机构树</router-link>
+    <router-link to="/print">打印</router-link>
   </div>
 </template>
 <script>

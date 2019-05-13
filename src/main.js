@@ -5,15 +5,18 @@ import '../static/Ueditor/ueditor.config.js'
 import '../static/Ueditor/ueditor.all.min.js'
 import '../static/Ueditor/lang/zh-cn/zh-cn.js'
 import '../static/Ueditor/ueditor.parse.min.js'
-Vue.config.productionTip = false
 
-Vue.prototype.bus = new Vue();
+import Print from 'vue-print-nb'
+Vue.use(Print)
+Vue.config.productionTip = false
+Vue.prototype.bus = new Vue()
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  components: {
+  // eslint-disable-next-line indent
+    components: {
     App
   },
   template: '<App/>'
