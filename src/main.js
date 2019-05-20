@@ -5,8 +5,9 @@ import '../static/Ueditor/ueditor.config.js'
 import '../static/Ueditor/ueditor.all.min.js'
 import '../static/Ueditor/lang/zh-cn/zh-cn.js'
 import '../static/Ueditor/ueditor.parse.min.js'
-
-import Print from 'vue-print-nb'
+import 'babel-polyfill'
+import Print from '@/plugs/print'
+// import Print from 'vue-print-nb'
 Vue.use(Print)
 Vue.config.productionTip = false
 Vue.prototype.bus = new Vue()
