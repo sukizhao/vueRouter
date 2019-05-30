@@ -1,16 +1,24 @@
 <template>
-  <div id="app">
+  <!-- <div id="app">
     <v-nav></v-nav>
     <router-view/>
+  </div> -->
+
+  <div id="app">
+    <v-nav></v-nav>
+    <keep-alive>
+      <router-view v-if="$route.meta.keepAlive"></router-view>
+    </keep-alive>
+    <router-view v-if="!$route.meta.keepAlive"></router-view>
   </div>
 </template>
 <script>
-import daohang from "./components/daohang.vue";
+import daohang from './components/daohang.vue'
 export default {
   name: 'App',
-  components:{
-  // 视图模板名称:对应的是一个组件
-  "v-nav":daohang,
+  components: {
+    // 视图模板名称:对应的是一个组件
+    'v-nav': daohang
   }
 }
 </script>

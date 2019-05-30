@@ -22,6 +22,9 @@ export default new Router({
   {
     path: '/jingyesi',
     name: 'jingyesi',
+    meta: {
+      keepAlive: true
+    },
     component: jingyesi
   },
   {
