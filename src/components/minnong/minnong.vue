@@ -9,7 +9,7 @@
     <child :zsq="sukiTitle"></child>
 
     <div id="news">
-      我是新闻组件 --{{this.$store.state.count}}
+      我是新闻组件 --{{this.$store.state.count}}----实际数字{{count}}---组建内部属性{{localComputed}}
       <br>
       <button @click="incCount()">增加数量</button>
     </div>
@@ -17,38 +17,47 @@
   </div>
 </template>
 <script>
-import { myfun } from "./minnong.js";
-import child from "./child.vue";
-import store from "../../vuex/store.js";
+import { myfun } from './minnong.js'
+import child from './child.vue'
+import store from '../../vuex/store.js'
 export default {
-  name: "minong",
+  name: 'minong',
   components: {
     child
   },
   data() {
     return {
-      sukiTitle: "玉面小达摩"
-    };
+      sukiTitle: '玉面小达摩'
+    }
   },
   store,
   methods: {
     diyfun() {
-      myfun();
+      myfun()
     },
     incCount() {
-      this.$store.commit("incCount");
-      console.log(this.$store.state.count);
+      // this.$store.commit('incCount')
+
+      console.log(this.$store.state.count)
+    }
+  },
+  computed: {
+    count() {
+      return this.$store.state.count
+    },
+    localComputed() {
+      return this.count + 5
     }
   },
   mounted() {
     // 接收信号openMenu
-    this.bus.$on("openMenu", msg => {
-      console.log(msg);
-    });
-  },
+    this.bus.$on('openMenu', msg => {
+      console.log(msg)
+    })
+  }
   // 最好在组件销毁前清除事件监听
   // beforeDestroy() {
   //   this.$bus.$off("openMenu");
   // }
-};
+}
 </script>

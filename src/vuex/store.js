@@ -1,30 +1,34 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+// import mutations from './mutations'
+// import actions from './actions'
+// import getters from './getters'
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 
+//  1.state在vuex中用于存储数据
+// var state = {
+//   count: 7
+// }
 
-/*1.state在vuex中用于存储数据*/
-var state = {
+// 2.mutations里面放的是方法，方法主要用于改变state里面的数据
 
-  count: 7
-}
+let mutations = {
 
-/*2.mutations里面放的是方法，方法主要用于改变state里面的数据
- */
-var mutations = {
+  incCount () {
 
-  incCount() {
-
-    ++state.count;
   }
 }
 
-//vuex  实例化 Vuex.store
+// vuex  实例化 Vuex.store
 const store = new Vuex.Store({
-  state,
+  state: {
+    count: 7
+  },
   mutations
+  // actions,
+  // getters,
+
 })
 
-
-export default store;
+export default store
