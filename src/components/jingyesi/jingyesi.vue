@@ -1,15 +1,17 @@
 <template>
-  <div>
+  <div style="height:100%;">
     <!-- 监听子组件的showCityName事件 -->
     <trainCity @showCityName="updateCity"></trainCity>
     <input>
+    <countryLink></countryLink>
   </div>
 </template>
 <script>
 import trainCity from './trainCity.vue'
+import countryLink from './country-link.vue'
 export default {
   name: 'ingyesi',
-  components: { trainCity },
+  components: { trainCity, countryLink },
   data() {
     return {
       toCity: '北京'
@@ -29,6 +31,12 @@ export default {
   }
 }
 </script>
+<style lang="">
+html,
+body {
+  height: 100%;
+}
+</style>
 
 
 

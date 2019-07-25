@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="height:100%;">
     <button type @click="gettext">点击</button>
     <div id="printTest" style="text-align:center">
       　　　　　<p>锄禾日当午</p>

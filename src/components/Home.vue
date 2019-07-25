@@ -5,6 +5,7 @@
     <br>
     <button @click="emitNews()">给News组件广播数据</button>
     <br>
+    <countryLink></countryLink>
   </div>
 </template>
 <script>
@@ -13,6 +14,7 @@
 import VueEvent from '../model/VueEvent.js'
 
 export default {
+  components: {},
   data() {
     return {
       msg: '我是一个home组件',
