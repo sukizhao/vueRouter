@@ -3,15 +3,17 @@
     <!-- 监听子组件的showCityName事件 -->
     <trainCity @showCityName="updateCity"></trainCity>
     <input>
+    <itemtable></itemtable>
     <countryLink></countryLink>
   </div>
 </template>
 <script>
 import trainCity from './trainCity.vue'
 import countryLink from './country-link.vue'
+import itemtable from './itemtable'
 export default {
   name: 'ingyesi',
-  components: { trainCity, countryLink },
+  components: { trainCity, countryLink, itemtable },
   data() {
     return {
       toCity: '北京'

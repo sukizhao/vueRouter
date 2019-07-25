@@ -2,7 +2,7 @@
   <div class="country_weblink" v-if="showCountry" id="codefans_net">
     <div class="country_box">
       <span class="close_country" @click="closeCountry">
-        <Icon class="close_country" @click="closeCountry" type="ios-close"></Icon>
+        <!-- <Icon class="close_country" @click="closeCountry" type="ios-close"></Icon> -->
       </span>
 
       <a href="http://www.gjzwfw.gov.cn" target="blank"><img :src="countryimg" alt></a>
