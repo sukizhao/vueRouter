@@ -7,12 +7,18 @@
       　　　　　<p>谁知盘中餐</p>
       　　　　　<p>粒粒皆辛苦</p>
       　　　</div>
-    　　　<button v-print="'#printTest'">打印</button>
+    <!-- 　　　<button v-print="'#printTest'">打印</button> -->
+    <button @click="getFunction">调用新函数</button>
+    <newImage></newImage>
+    <twoButton></twoButton>
   </div>
 </template>
 <script>
 import { password } from '@/libs/password'
+import {myMixin} from '@/mixins/package'
 export default {
+  mixins: [myMixin],
+  // 用了mixins就可以不再重复引入和声明组建了，可以直接调用里面的方法
   data() {
     return {
       list: [1, 2, 3, 4, 5]
@@ -23,6 +29,10 @@ export default {
       this.nodeList = this.list
       console.log(this.list)
       this.nodeList.splice(1, 1)
+    },
+    getFunction(){
+      // 引用了mixins那么里面的函数也可以直接调用了
+        this.setChoices()
     }
   },
   mounted() {
