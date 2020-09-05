@@ -5,27 +5,21 @@ import Vuex from 'vuex'
 // import getters from './getters'
 
 Vue.use(Vuex)
-
-//  1.state在vuex中用于存储数据
-// var state = {
-//   count: 7
-// }
-
-// 2.mutations里面放的是方法，方法主要用于改变state里面的数据
-
-let mutations = {
-
-  incCount () {
-
-  }
-}
-
+// mutations里面放的是方法，方法主要用于改变state里面的数据
 // vuex  实例化 Vuex.store
 const store = new Vuex.Store({
   state: {
-    count: 7
+    count: 7,
+    user:'无名'
   },
-  mutations
+  mutations:{
+    incCount(state){
+      state.count++
+    },
+    user(state,v){
+      state.user=v
+    }
+  }
   // actions,
   // getters,
 

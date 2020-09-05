@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App'
+import store from './vuex/store.js'
 import router from './router'
 import '../static/Ueditor/ueditor.config.js'
 import '../static/Ueditor/ueditor.all.min.js'
@@ -11,10 +12,10 @@ import Print from '@/plugs/print'
 Vue.use(Print)
 Vue.config.productionTip = false
 Vue.prototype.bus = new Vue()
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   // eslint-disable-next-line indent
     components: {

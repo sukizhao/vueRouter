@@ -11,7 +11,8 @@
     <div id="news">
       我是新闻组件 --{{this.$store.state.count}}----实际数字{{count}}---组建内部属性{{localComputed}}
       <br>
-      <button @click="incCount()">增加数量</button>
+      <button @click="incCount()">增加store.state数量</button>
+      <button @click="userName()">点击赋用户名:{{this.$store.state.user}}</button>
     </div>
     <!-- 这里是父组件，定义值必须在这里绑定一下，再去child子组件中接收 -->
   </div>
@@ -19,7 +20,7 @@
 <script>
 import { myfun } from './minnong.js'
 import child from './child.vue'
-import store from '../../vuex/store.js'
+
 export default {
   name: 'minong',
   components: {
@@ -30,15 +31,16 @@ export default {
       sukiTitle: '玉面小达摩'
     }
   },
-  store,
   methods: {
     diyfun() {
       myfun()
     },
     incCount() {
-      // this.$store.commit('incCount')
-
+      this.$store.commit('incCount')
       console.log(this.$store.state.count)
+    },
+    userName(){
+      this.$store.commit('user','zhaoshuqi')
     }
   },
   computed: {
