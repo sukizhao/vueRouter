@@ -7,6 +7,8 @@ import eee from '@/components/eee/eee.vue'
 import mycalendar from '@/components/calendar/mycalendar.vue'
 import tree from '@/components/tree/tree.vue'
 import print from '@/components/print/print.vue'
+import chacao from '@/components/chacao/chacao.vue'
+
 
 Vue.use(Router)
 export default new Router({
@@ -50,6 +52,11 @@ export default new Router({
     path: '/print',
     name: 'print',
     component: print
+  },
+  {
+    path: '/chacao',
+    name: 'chacao',
+    component: chacao
   }
   ]
 })
