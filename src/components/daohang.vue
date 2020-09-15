@@ -6,7 +6,7 @@
     <router-link to="/eee">鹅鹅鹅</router-link>
     <router-link to="/tree">机构树</router-link>
     <router-link to="/print">打印</router-link>
-    <router-link to="/chacao">插槽</router-link>
+    <router-link to="/chacao">插槽和mixins应用</router-link>
   </div>
 </template>
 <script>
@@ -25,7 +25,7 @@ export default {
 }
 .navagation a {
   display: inline-block;
-  width: 100px;
+  width: 200px;
   height: 50px;
   line-height: 50px;
   text-align: center;

@@ -1,7 +1,7 @@
 <template>
   <div>
       <button disabled="disabled">确定</button>
-      <button disabled="disabled">取消</button>
+      <button >取消</button>
   </div>
 </template>
 <script>

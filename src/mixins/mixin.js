@@ -15,7 +15,7 @@
 import newImage from '@/packaged-components/newImage'
 import twoButton from '@/packaged-components/twoButton'
 
-export const myMixin = {
+export const myMixin= {
   components: {
     newImage,
     twoButton
@@ -23,6 +23,9 @@ export const myMixin = {
   methods: {
     setChoices () {
       console.log('setChoices')
+    },
+    dayin(){
+      console.log('dayin')
     }
   }
 

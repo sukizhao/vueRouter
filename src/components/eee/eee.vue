@@ -9,16 +9,11 @@
       　　　</div>
     <!-- 　　　<button v-print="'#printTest'">打印</button> -->
     <button @click="getFunction">调用新函数</button>
-    <newImage></newImage>
-    <twoButton></twoButton>
   </div>
 </template>
 <script>
 import { password } from '@/libs/password'
-import {myMixin} from '@/mixins/package'
 export default {
-  mixins: [myMixin],
-  // 用了mixins就可以不再重复引入和声明组建了，可以直接调用里面的方法
   data() {
     return {
       list: [1, 2, 3, 4, 5]
