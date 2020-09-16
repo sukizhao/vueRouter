@@ -22,7 +22,7 @@ export const myMixin= {
   },
   methods: {
     setChoices () {
-      console.log('setChoices')
+      console.log("setChoices")
     },
     dayin(){
       console.log('dayin')
