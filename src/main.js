@@ -9,6 +9,10 @@ import '../static/Ueditor/ueditor.parse.min.js'
 import 'babel-polyfill'
 import Print from '@/plugs/print'
 // import Print from 'vue-print-nb'
+
+import './mock'//使用mockjs模拟
+
+
 Vue.use(Print)
 Vue.config.productionTip = false
 Vue.prototype.bus = new Vue()
