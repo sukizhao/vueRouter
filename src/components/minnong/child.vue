@@ -3,6 +3,7 @@
     <h1>我是子组件</h1>
     <p>{{zsq}}-这里可以直接接收父组件的值</p>
     <button @click="showTitle">点击进行bus传值</button>
+    <h3>provide父组件给子孙组件传值{{userName}}</h3>
   </div>
 </template>
 <script>
@@ -13,6 +14,11 @@ export default {
       type: String, //key不能乱写
       default: ""
     }
+  },
+  inject : {                   //inject后面可以是一个对象
+        userName : {
+            default : '默认值'  //指定默认值
+        }
   },
   methods: {
     showTitle: function() {

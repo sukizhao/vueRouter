@@ -32,6 +32,11 @@ export default {
       sukiTitle: '玉面小达摩'
     }
   },
+  provide(){    //provide作为一个方法使用 ( 推荐使用 )。
+    return{
+      'userName' : 'zhaoshuqi',
+    }
+  },
   computed: {
        ...mapGetters([
     'errorCount'
