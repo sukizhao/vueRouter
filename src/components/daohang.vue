@@ -7,6 +7,7 @@
     <router-link to="/tree">机构树</router-link>
     <router-link to="/print">打印</router-link>
     <router-link to="/chacao">插槽和mixins应用</router-link>
+    <router-link to="/biaoge">表格</router-link>
   </div>
 </template>
 <script>

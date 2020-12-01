@@ -8,6 +8,8 @@ import mycalendar from '@/components/calendar/mycalendar.vue'
 import tree from '@/components/tree/tree.vue'
 import print from '@/components/print/print.vue'
 import chacao from '@/components/chacao/chacao.vue'
+import biaoge from '@/components/d-Table/biaoge.vue'
+
 
 
 Vue.use(Router)
@@ -57,6 +59,11 @@ export default new Router({
     path: '/chacao',
     name: 'chacao',
     component: chacao
+  },
+  {
+    path: '/biaoge',
+    name: 'biaoge',
+    component: biaoge
   }
   ]
 })
